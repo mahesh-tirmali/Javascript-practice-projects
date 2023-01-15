@@ -1,0 +1,8 @@
+#Folders
+covers/
+songs/
+
+#files
+*.jpg
+*.gif
+*.png
