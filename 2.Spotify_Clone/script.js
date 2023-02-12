@@ -45,6 +45,13 @@ audioElement.addEventListener('timeupdate', () => {
   //update progress bar
   progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
   myProgressBar.value = progress;
+  if (audioElement.currentTime == audioElement.duration) {
+    songIndex += 1; //increase song index
+    audioElement.src = `songs/${songIndex + 1}.mp3`; //filename is always songindex+1
+    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+  }
 });
 
 myProgressBar.addEventListener('change', () => {
